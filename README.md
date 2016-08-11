@@ -13,3 +13,9 @@ https://workfrom.co/
 
 ## Funcionalidades
 O que você gostaria de ver nessa ferramenta? [Comente nessa issue](https://github.com/trabalhando/ondetrabalhar/issues/3).
+
+## Executando o projeto
+
+```bash
+$ npm install -g bower http-server && bower install && http-server
+```
