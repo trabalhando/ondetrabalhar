@@ -1,0 +1,9 @@
+/*
+This main file is for splash screen, while app-theme and web components are not loaded
+*/
+
+body {
+  background: #fafafa;
+  color: #4c4c4c;
+  font: 400 14px / 21px Lato;
+}
