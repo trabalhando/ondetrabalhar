@@ -5,8 +5,9 @@
 Listar bons lugares para trabalhar nas cidades brasileiras. Podemos listar cafés, coworkings, hotéis e onde mais for possível trabalhar.
 
 ## Projetos similares
-https://workfrom.co/
-
+- https://workfrom.co/
+- http://www.coworkingintown.com/
+- http://workhardanywhere.com/
 
 ## Tecnologia
 [Ajude-nos a decidir qual a melhor tecnologia pra esse projeto](https://github.com/trabalhando/ondetrabalhar/issues/4).
