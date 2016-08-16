@@ -1,0 +1,63 @@
+<dom-module id="work-places">
+
+    <template>
+      <style>
+      :host {
+        display: block;
+      }
+
+      google-map {
+        height: 600px;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      icon-rate {
+        --icon-rate-filled: {
+          color: var(--paper-yellow-900);
+        };
+
+        --icon-rate-empty: {
+          color: var(--paper-yellow-200);
+        };
+      }
+      </style>
+      <google-map latitude="{{area.lat}}" longitude="{{area.lon}}" zoom="{{area.zoom}}">
+        <template is="dom-repeat" items="{{places}}">
+          <google-map-marker
+            latitude="{{item.lat}}"
+            longitude="{{item.lon}}"
+            title="{{item.name}}"
+            icon="icons:star"
+            icon-fill-color="yellow"
+            icon-scale="{{_getScale(item.rate)}}">
+            <h2>{{item.name}}</h2>
+            <icon-rate rate$="{{item.rate}}" interactive></icon-rate>
+          </google-map-marker>
+        </template>
+      </google-map>
+    </template>
+    <script>
+    Polymer({
+        is: "work-places",
+        properties: {
+          places: {
+            type: Array
+          },
+          area: {
+            type: Object,
+            value: {lat: undefined, lon: undefined, zoom: undefined}
+          }
+        },
+        _getScale: function(rate) {
+          // Scale between 1 and 2, for rate between 1 and 5
+          var scale = (rate + 3) / 4;
+          if(scale<1) return 1;
+          if(scale>2) return 2;
+          return scale;
+        }
+    });
+    </script>
+
+</dom-module>
