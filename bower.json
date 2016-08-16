@@ -25,6 +25,6 @@
     "iron-icons": "^1.1.3",
     "google-map": "klarkc/google-map#master",
     "paper-styles": "^1.1.4",
-    "icon-rate": "klarkc/icon-rate#master"
+    "icon-rate": "^1.1.2"
   }
 }
