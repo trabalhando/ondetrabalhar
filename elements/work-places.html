@@ -33,7 +33,7 @@
             icon-fill-color="yellow"
             icon-scale="{{_getScale(item.rate)}}">
             <h2>{{item.name}}</h2>
-            <icon-rate rate$="{{item.rate}}" interactive></icon-rate>
+            <icon-rate rate="{{item.rate}}" interactive></icon-rate>
           </google-map-marker>
         </template>
       </google-map>
@@ -50,12 +50,11 @@
             value: {lat: undefined, lon: undefined, zoom: undefined}
           }
         },
-        _getScale: function(rate) {
-          // Scale between 1 and 2, for rate between 1 and 5
-          var scale = (rate + 3) / 4;
-          if(scale<1) return 1;
-          if(scale>2) return 2;
-          return scale;
+        observers: [
+          '_placesChanged(places.*)'
+        ],
+        _placesChanged: function(changeRecord) {
+          console.log('places changed', changeRecord);
         }
     });
     </script>
