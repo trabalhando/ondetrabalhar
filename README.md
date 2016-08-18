@@ -20,3 +20,6 @@ O que você gostaria de ver nessa ferramenta? [Comente nessa issue](https://gith
 ```bash
 $ npm install -g bower http-server && bower install && http-server
 ```
+
+## Contribua!
+[![Stories in Ready](https://badge.waffle.io/trabalhando/ondetrabalhar.svg?label=ready&title=Ready)](http://waffle.io/trabalhando/ondetrabalhar)
