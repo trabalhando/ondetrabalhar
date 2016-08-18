@@ -22,4 +22,6 @@ $ npm install -g bower http-server && bower install && http-server
 ```
 
 ## Contribua!
-[![Stories in Ready](https://badge.waffle.io/trabalhando/ondetrabalhar.svg?label=ready&title=Ready)](http://waffle.io/trabalhando/ondetrabalhar)
+Tarefas: [![Stories in Ready](https://badge.waffle.io/trabalhando/ondetrabalhar.svg?label=ready&title=Ready)](http://waffle.io/trabalhando/ondetrabalhar)
+
+Slack: https://onde-trabalhar.herokuapp.com/
