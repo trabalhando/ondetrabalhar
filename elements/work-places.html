@@ -23,7 +23,12 @@
         };
       }
       </style>
-      <google-map latitude="{{area.lat}}" longitude="{{area.lon}}" zoom="{{area.zoom}}">
+      <google-map
+        latitude="{{area.lat}}"
+        longitude="{{area.lon}}"
+        zoom="{{area.zoom}}"
+        single-info-window>
+
         <template is="dom-repeat" items="{{places}}">
           <google-map-marker
             latitude="{{item.lat}}"
@@ -33,9 +38,10 @@
             icon-fill-color="yellow"
             icon-scale="{{_getScale(item.rate)}}">
             <h2>{{item.name}}</h2>
-            <icon-rate rate$="{{item.rate}}" interactive></icon-rate>
+            <icon-rate rate="{{item.rate}}" interactive></icon-rate>
           </google-map-marker>
         </template>
+        
       </google-map>
     </template>
     <script>
@@ -49,6 +55,12 @@
             type: Object,
             value: {lat: undefined, lon: undefined, zoom: undefined}
           }
+        },
+        observers: [
+          '_placesChanged(places.*)'
+        ],
+        _placesChanged: function(changeRecord) {
+          console.log(changeRecord.path, 'changed to', changeRecord.value);
         },
         _getScale: function(rate) {
           // Scale between 1 and 2, for rate between 1 and 5
