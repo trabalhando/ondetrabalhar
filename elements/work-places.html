@@ -23,7 +23,12 @@
         };
       }
       </style>
-      <google-map latitude="{{area.lat}}" longitude="{{area.lon}}" zoom="{{area.zoom}}">
+      <google-map
+        latitude="{{area.lat}}"
+        longitude="{{area.lon}}"
+        zoom="{{area.zoom}}"
+        single-info-window>
+
         <template is="dom-repeat" items="{{places}}">
           <google-map-marker
             latitude="{{item.lat}}"
@@ -36,6 +41,7 @@
             <icon-rate rate="{{item.rate}}" interactive></icon-rate>
           </google-map-marker>
         </template>
+        
       </google-map>
     </template>
     <script>
