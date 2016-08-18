@@ -1,5 +1,6 @@
 # Onde Trabalhar?
 > Toda boa ferramenta começa com um bom nome. Ainda não decidimos o nosso,  [ajude-nos](https://github.com/trabalhando/ondetrabalhar/issues/1)!
+[slack](https://onde-trabalhar.herokuapp.com/)!
 
 ## Proposta
 Listar bons lugares para trabalhar nas cidades brasileiras. Podemos listar cafés, coworkings, hotéis e onde mais for possível trabalhar.
