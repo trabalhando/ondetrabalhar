@@ -54,7 +54,14 @@
           '_placesChanged(places.*)'
         ],
         _placesChanged: function(changeRecord) {
-          console.log('places changed', changeRecord);
+          console.log(changeRecord.path, 'changed to', changeRecord.value);
+        },
+        _getScale: function(rate) {
+          // Scale between 1 and 2, for rate between 1 and 5
+          var scale = (rate + 3) / 4;
+          if(scale<1) return 1;
+          if(scale>2) return 2;
+          return scale;
         }
     });
     </script>
