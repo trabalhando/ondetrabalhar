@@ -29,19 +29,19 @@
         zoom="{{area.zoom}}"
         single-info-window>
 
-        <template is="dom-repeat" items="{{places}}">
+        <template is="dom-repeat" items="{{places}}" as="place">
           <google-map-marker
-            latitude="{{item.lat}}"
-            longitude="{{item.lon}}"
-            title="{{item.name}}"
+            latitude="{{place.lat}}"
+            longitude="{{place.lon}}"
+            title="{{place.name}}"
             icon="icons:star"
             icon-fill-color="yellow"
-            icon-scale="{{_getScale(item.rate)}}">
-            <h2>{{item.name}}</h2>
-            <icon-rate rate="{{item.rate}}" interactive></icon-rate>
+            icon-scale="{{_getScale(place.rate)}}">
+            <h2>{{place.name}}</h2>
+            <icon-rate rate="{{place.rate}}" interactive></icon-rate>
           </google-map-marker>
         </template>
-        
+
       </google-map>
     </template>
     <script>

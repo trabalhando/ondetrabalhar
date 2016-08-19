@@ -18,7 +18,7 @@ O que você gostaria de ver nessa ferramenta? [Comente nessa issue](https://gith
 ## Executando o projeto
 
 ```bash
-$ npm install -g bower http-server && bower install && http-server
+$ npm install -g bower firebase-tools && bower install && firebase server
 ```
 
 ## Contribua!

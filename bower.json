@@ -26,6 +26,8 @@
     "paper-styles": "^1.1.4",
     "icon-rate": "^1.1.2",
     "iron-input": "^1.0.10",
-    "google-map": "klarkc/google-map#UseDOMInMarkers"
+    "google-map": "klarkc/google-map#UseDOMInMarkers",
+    "polymerfire": "^0.9.5",
+    "app-storage": "^0.9.4"
   }
 }

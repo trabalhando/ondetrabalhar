@@ -48,6 +48,20 @@
   <template is="dom-bind" id="app">
     <p>{{message}}</p>
     <work-places area="{{area}}" places="{{places}}"></work-places>
+
+    <firebase-app
+      name="{{config.firebase.name}}"
+      auth-domain="{{config.firebase.authDomain}}"
+      database-url="{{config.firebase.databaseURL}}"
+      api-key="{{config.firebase.apiKey}}">
+    </firebase-app>
+
+    <firebase-query
+      app-name="{{config.firebase.name}}"
+      path="/places"
+      data="{{places}}"
+      log>
+    </firebase-query>
   </template>
 
   <!-- App Script -->
