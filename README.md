@@ -1,6 +1,8 @@
 # Onde Trabalhar?
 > Toda boa ferramenta começa com um bom nome. Ainda não decidimos o nosso,  [ajude-nos](https://github.com/trabalhando/ondetrabalhar/issues/1)!
 
+Protótipo: [https://ondetrabalhar-faacc.firebaseapp.com](https://ondetrabalhar-faacc.firebaseapp.com)
+
 ## Proposta
 Listar bons lugares para trabalhar nas cidades brasileiras. Podemos listar cafés, coworkings, hotéis e onde mais for possível trabalhar.
 
@@ -15,10 +17,16 @@ Listar bons lugares para trabalhar nas cidades brasileiras. Podemos listar café
 ## Funcionalidades
 O que você gostaria de ver nessa ferramenta? [Comente nessa issue](https://github.com/trabalhando/ondetrabalhar/issues/3).
 
-## Executando o projeto
+## Executando o projeto localmente
 
 ```bash
-$ npm install -g bower http-server && bower install && http-server
+$ npm install -g bower firebase-tools && bower install && firebase server
+```
+
+## Deploy para o firebase
+
+```bash
+$ firebase deploy
 ```
 
 ## Contribua!

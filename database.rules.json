@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "places": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
