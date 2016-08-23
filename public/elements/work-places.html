@@ -11,7 +11,7 @@
         height: 600px;
       }
 
-      google-map #target {
+      google-map-marker #target {
         position: absolute;
         top: calc(50% - 64px);
         left: calc(50% - 32px);
@@ -26,7 +26,15 @@
         longitude="{{area.lon}}"
         zoom="{{area.zoom}}"
         single-info-window>
-          <iron-icon id="target" icon="communication:location-on"></iron-icon>
+          <google-map-marker
+            id="target"
+            icon="maps:my-location"
+            icon-scale="1.4"
+            icon-fill-color="#4285f4"
+            icon-stroke-color="#4285f4"
+            latitude="{{area.lat}}"
+            longitude="{{area.lon}}">
+          </google-map-marker>>
           <template is="dom-repeat" items="{{places}}" as="place">
           <google-map-marker
             latitude="{{place.lat}}"
