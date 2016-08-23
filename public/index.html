@@ -45,10 +45,10 @@
 </head>
 
 <body unresolved>
-  <template is="dom-bind" id="app">  
+  <template is="dom-bind" id="app">
     <div class="middle">
       <paper-toast id="toast" text="{{message}}"></paper-toast>
-      <my-place area="{{area}}"></my-place>
+      <my-place area="{{area}}" on-add="_addPlace"></my-place>
 
       <work-places area="{{area}}" places="{{places}}"></work-places>
 

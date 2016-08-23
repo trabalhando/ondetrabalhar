@@ -12,12 +12,34 @@
       </style>
       <paper-card>
         <div class="card-content">
-          <paper-input label="Nome" value="{{name}}" placeholder="Digite o nome do local"></paper-input>
-          <paper-input label= "Latitude" value="{{area.lat}}" type="number" step="0.001"></paper-input>
-          <paper-input label= "Longitude" value="{{area.lon}}" type="number" step="0.001"></paper-input>
+          <paper-input
+            id="name"
+            label="Nome"
+            value="{{name}}"
+            placeholder="Digite o nome do local"
+            required
+            pattern="[a-zA-Z]+">
+          </paper-input>
+          <paper-input
+            id="lat"
+            label= "Latitude"
+            value="{{area.lat}}"
+            type="number"
+            step="0.001"
+            required>
+          </paper-input>
+          <paper-input
+            id="lon"
+            label= "Longitude"
+            value="{{area.lon}}"
+            type="number"
+            step="0.001"
+            required>
+          </paper-input>
+          <icon-rate id="rate" rate="{{rate}}" interactive></icon-rate>
         </div>
         <div class="card-actions">
-          <paper-button>Adicionar</paper-button>
+          <paper-button on-tap="_validate">Adicionar</paper-button>
         </div>
       </paper-card>
     </template>
@@ -25,15 +47,23 @@
     Polymer({
         is: "my-place",
         properties: {
-          area: {
-            type: Object,
-            value: {lat: undefined, lon: undefined, zoom: undefined}
-          },
-          name : {
-            type: String,
-            notify: true,
-            value: "Meu Local"
-          }
+          area: Object,
+          name: String,
+          rate: Number
+        },
+        _validate: function() {
+          var inputs = Polymer.dom(this).querySelectorAll('paper-card paper-input');
+
+          if(!this.$.name.validate()) return;
+          if(!this.$.lat.validate()) return;
+          if(!this.$.lon.validate()) return;
+
+          this.fire('add', {
+            lat: this.area.lat,
+            lon: this.area.lon,
+            name: this.name,
+            rate: this.rate
+          });
         }
     });
     </script>

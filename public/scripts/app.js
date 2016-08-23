@@ -26,4 +26,10 @@
     app.message += ' DARY!';
     app.$.toast.show();
   });
+
+  // Handle new place
+  app._addPlace = function(event) {
+    var place = event.detail;
+    app.push('places', place);
+  };
 })(document);

@@ -4,20 +4,21 @@
       <style include="shared-styles">
       :host {
         display: block;
+        @apply(--disable-selection);
       }
 
       google-map {
         height: 600px;
       }
 
-      icon-rate {
-        --icon-rate-filled: {
-          color: var(--paper-yellow-900);
-        };
-
-        --icon-rate-empty: {
-          color: var(--paper-yellow-200);
-        };
+      google-map #target {
+        position: absolute;
+        top: calc(50% - 64px);
+        left: calc(50% - 32px);
+        color: var(--accent-color);
+        pointer-events: none;
+        --iron-icon-height: 64px;
+        --iron-icon-width: 64px;
       }
       </style>
       <google-map
@@ -25,6 +26,7 @@
         longitude="{{area.lon}}"
         zoom="{{area.zoom}}"
         single-info-window>
+          <iron-icon id="target" icon="communication:location-on"></iron-icon>
           <template is="dom-repeat" items="{{places}}" as="place">
           <google-map-marker
             latitude="{{place.lat}}"
