@@ -1,16 +1,13 @@
 <dom-module id="work-places">
 
     <template>
-      <style>
+      <style include="shared-styles">
       :host {
         display: block;
       }
 
       google-map {
         height: 600px;
-        margin: 8px;
-
-        @apply(--shadow-elevation-2dp);
       }
 
       icon-rate {
@@ -28,8 +25,7 @@
         longitude="{{area.lon}}"
         zoom="{{area.zoom}}"
         single-info-window>
-
-        <template is="dom-repeat" items="{{places}}" as="place">
+          <template is="dom-repeat" items="{{places}}" as="place">
           <google-map-marker
             latitude="{{place.lat}}"
             longitude="{{place.lon}}"
@@ -41,7 +37,6 @@
             <icon-rate rate="{{place.rate}}" interactive></icon-rate>
           </google-map-marker>
         </template>
-
       </google-map>
     </template>
     <script>

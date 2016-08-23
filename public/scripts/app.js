@@ -24,5 +24,6 @@
 
   window.addEventListener('WebComponentsReady', function(e){
     app.message += ' DARY!';
+    app.$.toast.show();
   });
 })(document);

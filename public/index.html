@@ -45,9 +45,9 @@
 </head>
 
 <body unresolved>
-  <template is="dom-bind" id="app">
+  <template is="dom-bind" id="app">  
     <div class="middle">
-      <p>{{message}}</p>
+      <paper-toast id="toast" text="{{message}}"></paper-toast>
       <my-place area="{{area}}"></my-place>
 
       <work-places area="{{area}}" places="{{places}}"></work-places>
