@@ -46,22 +46,26 @@
 
 <body unresolved>
   <template is="dom-bind" id="app">
-    <p>{{message}}</p>
-    <work-places area="{{area}}" places="{{places}}"></work-places>
+    <div class="middle">
+      <p>{{message}}</p>
+      <my-place area="{{area}}"></my-place>
 
-    <firebase-app
-      name="{{config.firebase.name}}"
-      auth-domain="{{config.firebase.authDomain}}"
-      database-url="{{config.firebase.databaseURL}}"
-      api-key="{{config.firebase.apiKey}}">
-    </firebase-app>
+      <work-places area="{{area}}" places="{{places}}"></work-places>
 
-    <firebase-query
-      app-name="{{config.firebase.name}}"
-      path="/places"
-      data="{{places}}"
-      log>
-    </firebase-query>
+      <firebase-app
+        name="{{config.firebase.name}}"
+        auth-domain="{{config.firebase.authDomain}}"
+        database-url="{{config.firebase.databaseURL}}"
+        api-key="{{config.firebase.apiKey}}">
+      </firebase-app>
+
+      <firebase-query
+        app-name="{{config.firebase.name}}"
+        path="/places"
+        data="{{places}}"
+        log>
+      </firebase-query>
+    </div>
   </template>
 
   <!-- App Script -->

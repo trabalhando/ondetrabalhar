@@ -1,0 +1,28 @@
+<dom-module id="my-place">
+
+    <template>
+      <style>
+      :host {
+        display: block;
+        padding: 16px;
+        margin: 8px;
+
+        @apply(--shadow-elevation-2dp);
+      }
+      </style>
+      <paper-input label= "Latitude" value="{{area.lat}}" type="number" step="0.001"></paper-input>
+      <paper-input label= "Longitude" value="{{area.lon}}" type="number" step="0.001"></paper-input>
+    </template>
+    <script>
+    Polymer({
+        is: "my-place",
+        properties: {
+          area: {
+            type: Object,
+            value: {lat: undefined, lon: undefined, zoom: undefined}
+          }
+        }
+    });
+    </script>
+
+</dom-module>
