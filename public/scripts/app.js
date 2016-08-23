@@ -30,6 +30,6 @@
   // Handle new place
   app._addPlace = function(event) {
     var place = event.detail;
-    app.push('places', place);
+    app.$.query.ref.push(place);
   };
 })(document);
