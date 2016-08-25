@@ -1,26 +1,24 @@
 <dom-module id="work-places">
 
     <template>
-      <style>
+      <style include="shared-styles">
       :host {
         display: block;
+        @apply(--disable-selection);
       }
 
       google-map {
         height: 600px;
-        max-width: 960px;
-        margin-left: auto;
-        margin-right: auto;
       }
 
-      icon-rate {
-        --icon-rate-filled: {
-          color: var(--paper-yellow-900);
-        };
-
-        --icon-rate-empty: {
-          color: var(--paper-yellow-200);
-        };
+      google-map-marker #target {
+        position: absolute;
+        top: calc(50% - 64px);
+        left: calc(50% - 32px);
+        color: var(--accent-color);
+        pointer-events: none;
+        --iron-icon-height: 64px;
+        --iron-icon-width: 64px;
       }
       </style>
       <google-map
@@ -28,8 +26,16 @@
         longitude="{{area.lon}}"
         zoom="{{area.zoom}}"
         single-info-window>
-
-        <template is="dom-repeat" items="{{places}}" as="place">
+          <google-map-marker
+            id="target"
+            icon="maps:my-location"
+            icon-scale="1.4"
+            icon-fill-color="#4285f4"
+            icon-stroke-color="#4285f4"
+            latitude="{{area.lat}}"
+            longitude="{{area.lon}}">
+          </google-map-marker>>
+          <template is="dom-repeat" items="{{places}}" as="place">
           <google-map-marker
             latitude="{{place.lat}}"
             longitude="{{place.lon}}"
@@ -41,7 +47,6 @@
             <icon-rate rate="{{place.rate}}" interactive></icon-rate>
           </google-map-marker>
         </template>
-
       </google-map>
     </template>
     <script>

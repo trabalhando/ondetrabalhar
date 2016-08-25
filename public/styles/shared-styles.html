@@ -1,0 +1,24 @@
+<!-- Web Components shared styles -->
+<dom-module id="shared-styles">
+  <template>
+    <style>
+    .middle work-places, .middle my-place {
+      margin: 16px;
+    }
+
+    .middle work-places {
+      @apply(--shadow-elevation-2dp);
+    }
+
+    icon-rate {
+      --icon-rate-filled: {
+        color: var(--paper-yellow-900);
+      };
+
+      --icon-rate-empty: {
+        color: var(--paper-yellow-200);
+      };
+    }
+    </style>
+  </template>
+</dom-module>

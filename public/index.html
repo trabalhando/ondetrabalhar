@@ -46,22 +46,27 @@
 
 <body unresolved>
   <template is="dom-bind" id="app">
-    <p>{{message}}</p>
-    <work-places area="{{area}}" places="{{places}}"></work-places>
+    <div class="middle">
+      <paper-toast id="toast" text="{{message}}"></paper-toast>
+      <my-place area="{{area}}" on-add="_addPlace"></my-place>
 
-    <firebase-app
-      name="{{config.firebase.name}}"
-      auth-domain="{{config.firebase.authDomain}}"
-      database-url="{{config.firebase.databaseURL}}"
-      api-key="{{config.firebase.apiKey}}">
-    </firebase-app>
+      <work-places area="{{area}}" places="{{places}}"></work-places>
 
-    <firebase-query
-      app-name="{{config.firebase.name}}"
-      path="/places"
-      data="{{places}}"
-      log>
-    </firebase-query>
+      <firebase-app
+        name="{{config.firebase.name}}"
+        auth-domain="{{config.firebase.authDomain}}"
+        database-url="{{config.firebase.databaseURL}}"
+        api-key="{{config.firebase.apiKey}}">
+      </firebase-app>
+
+      <firebase-query
+        id="query"
+        app-name="{{config.firebase.name}}"
+        path="/places"
+        data="{{places}}"
+        log>
+      </firebase-query>
+    </div>
   </template>
 
   <!-- App Script -->

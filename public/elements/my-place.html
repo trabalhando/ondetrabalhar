@@ -1,0 +1,71 @@
+<dom-module id="my-place">
+
+    <template>
+      <style include="iron-flex shared-styles">
+      :host {
+        display: block;
+      }
+
+      paper-card {
+        width: 100%;
+      }
+      </style>
+      <paper-card>
+        <div class="card-content">
+          <paper-input
+            id="name"
+            label="Nome"
+            value="{{name}}"
+            placeholder="Digite o nome do local"
+            required
+            pattern="[\sa-zA-Z0-9]+">
+          </paper-input>
+          <paper-input
+            id="lat"
+            label= "Latitude"
+            value="{{area.lat}}"
+            step="0.001"
+            required
+            pattern="(\-?\d+(\.\d+)?)">
+          </paper-input>
+          <paper-input
+            id="lon"
+            label= "Longitude"
+            value="{{area.lon}}"
+            step="0.001"
+            required
+            pattern="(\-?\d+(\.\d+)?)">
+          </paper-input>
+          <icon-rate id="rate" rate="{{rate}}" interactive></icon-rate>
+        </div>
+        <div class="card-actions">
+          <paper-button on-tap="_validate">Adicionar</paper-button>
+        </div>
+      </paper-card>
+    </template>
+    <script>
+    Polymer({
+        is: "my-place",
+        properties: {
+          area: Object,
+          name: String,
+          rate: Number
+        },
+        _validate: function() {
+          var inputs = Polymer.dom(this).querySelectorAll('paper-card paper-input');
+
+          if(!this.$.name.validate()) return;
+          if(!this.$.lat.validate()) return;
+          if(!this.$.lon.validate()) return;
+
+          this.fire('add', {
+            lat: this.area.lat,
+            lon: this.area.lon,
+            name: this.name,
+            rate: this.rate
+          });
+        }
+    });
+    </script>
+
+</dom-module>
