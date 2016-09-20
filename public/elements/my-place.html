@@ -26,7 +26,7 @@
             value="{{area.lat}}"
             step="0.001"
             required
-            pattern="(\-?\d+(\.\d+)?)">
+            allowed-pattern="[-.\d]">
           </paper-input>
           <paper-input
             id="lon"
@@ -34,7 +34,33 @@
             value="{{area.lon}}"
             step="0.001"
             required
-            pattern="(\-?\d+(\.\d+)?)">
+            allowed-pattern="[-.\d]">
+          </paper-input>
+          <paper-input
+            id="site"
+            label= "Site"
+            value="{{site}}"
+            required>
+          </paper-input>
+          <paper-input
+            id="email"
+            label= "Email"
+            value="{{email}}">
+          </paper-input>
+          <paper-input
+            id="phone"
+            label= "Telefone"
+            value="{{phone}}">
+          </paper-input>
+          <paper-input
+            id="businessHoursStart"
+            label= "Início do Expediente"
+            value="{{businessHoursStart}}">
+          </paper-input>
+          <paper-input
+            id="businessHoursEnd"
+            label= "Fim do Expediente"
+            value="{{businessHoursEnd}}">
           </paper-input>
           <icon-rate id="rate" rate="{{rate}}" interactive></icon-rate>
         </div>
@@ -49,7 +75,10 @@
         properties: {
           area: Object,
           name: String,
-          rate: Number
+          site: String,
+          email: String,
+          phone: String,
+          businessHours: Object
         },
         _validate: function() {
           var inputs = Polymer.dom(this).querySelectorAll('paper-card paper-input');
@@ -57,11 +86,23 @@
           if(!this.$.name.validate()) return;
           if(!this.$.lat.validate()) return;
           if(!this.$.lon.validate()) return;
+          if(!this.$.site.validate()) return;
+          if(!this.$.email.validate()) return;
+          if(!this.$.phone.validate()) return;
+          if(!this.$.businessHoursStart.validate()) return;
+          if(!this.$.businessHoursEnd.validate()) return;
 
           this.fire('add', {
             lat: this.area.lat,
             lon: this.area.lon,
             name: this.name,
+            site: this.site,
+            email: this.email,
+            phone: this.phone,
+            businessHours: {
+              start: this.businessHoursStart,
+              end: this.businessHoursEnd
+            },
             rate: this.rate
           });
         }

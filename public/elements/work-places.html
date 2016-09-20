@@ -44,6 +44,13 @@
             icon-fill-color="yellow"
             icon-scale="{{_getScale(place.rate)}}">
             <h2>{{place.name}}</h2>
+            <a href="{{place.site}}">{{place.site}}</a>
+            <p>{{place.email}}</p>
+            <p>{{place.phone}}</p>
+            <p>
+              Horário de funcionamento:
+            </p>
+            <p>Das {{place.businessHours.start}} às {{place.businessHours.end}}</p>
             <icon-rate rate="{{place.rate}}" interactive></icon-rate>
           </google-map-marker>
         </template>
