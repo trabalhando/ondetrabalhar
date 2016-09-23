@@ -20,7 +20,7 @@ O que você gostaria de ver nessa ferramenta? [Comente nessa issue](https://gith
 ## Executando o projeto localmente
 
 ```bash
-$ npm install -g bower firebase-tools && bower install && firebase server
+$ npm install -g bower firebase-tools && bower install && firebase serve
 ```
 
 ## Deploy para o firebase
